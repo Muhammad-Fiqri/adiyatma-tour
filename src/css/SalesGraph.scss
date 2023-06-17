@@ -1,0 +1,94 @@
+.SalesGraph-wrapper
+{
+    background-color: white;
+    width: 51.5vw;
+    height: 25vw;
+    margin: 1.5%;
+    border-radius: 10px;
+    padding: 1%;
+    
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 2fr 8fr;
+    justify-items: stretch;
+    align-items: center;
+
+    .box-title
+    {
+        color: #090E30;
+        font-weight: 700;
+        display: flex;
+        
+        p
+        {
+            padding-left: 10%;
+        }
+    }
+
+    .interval
+    {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+
+
+        & > *
+        {
+            margin-left: 1%;
+            font-size: 70%;
+        }
+
+        input
+        {
+            height: 5%;
+            color: #2D3540;
+            background-color: transparent;
+            border: 1px solid #B0B1B2
+        }
+    }
+
+    .data-info
+    {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1%;
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div > p
+        {
+            font-size: 80%;
+            color: #616161;
+        }
+
+        div > .color-chart
+        {
+            aspect-ratio: 1/1;
+            width: 10%;
+            border-radius: 4px;
+        }
+
+        .data-1 > .color-chart
+        {
+            background-color: #454C56;
+        }
+
+        .data-2 > .color-chart
+        {
+            background-color: #61CCB7;
+        }
+
+        .data-3 > .color-chart
+        {
+            background-color: #5589CD;
+        }
+    }
+}
