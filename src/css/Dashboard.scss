@@ -1,0 +1,173 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+.Dashboard-wrapper
+{
+    width: 100vw;
+    height: 100vh;
+
+    .sticky-top-nav
+    {
+        width: 100vw;
+        height: 10vh;
+        background-color: white;
+
+        .float-left
+        {
+            float: left;
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            img
+            {
+                width: 50%;
+                height: 50%;
+                margin-left: 20%;
+            }
+
+            .burger-icon
+            {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 20%;
+                    height: 20%;
+                }
+            }
+        }
+
+        .float-right
+        {
+            width: 20%;
+            height: 100%;
+            float: right;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .profile-pic
+            {
+                padding: 5%;
+                img
+                {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .profile-name
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15%;
+                font-size: 1vw;
+            }
+        }
+    }
+
+    .left-panel
+    {
+        width: 20vw;
+        height: 100%;
+        background-color: rgb(253, 253, 253);
+        display: flex;
+        flex-direction: column;
+        float: left;
+
+        .profile
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+
+        .dashboard
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 85%;
+        }
+
+        .produk
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 70% 15%;
+        }
+
+        .reservation
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 70% 15%;
+        }
+
+        .service-complaints
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 85%;
+        }
+
+        .report
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 85%;
+        }
+
+        .account
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 85%;
+        }
+
+        .logout
+        {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            display: grid;
+            justify-items: left;
+            align-items: center;
+            grid-template-columns: 15% 85%;
+        }
+    }
+
+    .main
+    {
+        width: 80vw;
+        height: 100%;
+        float: right;
+    }
+}
