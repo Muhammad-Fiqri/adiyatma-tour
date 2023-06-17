@@ -1,0 +1,48 @@
+.SalesGraph-wrapper
+{
+    background-color: white;
+    width: 60vw;
+    height: 25vw;
+    margin: 1.5%;
+    border-radius: 10px;
+    
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 2fr 8fr;
+    justify-items: stretch;
+    align-items: center;
+
+    .box-title
+    {
+        color: #090E30;
+        font-weight: 700;
+        display: flex;
+        
+        p
+        {
+            padding-left: 10%;
+        }
+    }
+
+    .interval
+    {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+
+
+        & > *
+        {
+            margin-left: 1%;
+            font-size: 70%;
+        }
+
+        input
+        {
+            height: 5%;
+            color: #2D3540;
+            background-color: transparent;
+            border: 1px solid #B0B1B2
+        }
+    }
+}
