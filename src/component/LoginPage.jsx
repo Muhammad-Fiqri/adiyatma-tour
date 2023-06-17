@@ -15,7 +15,7 @@ function LoginPage() {
     return(
         <div className="LoginPage-wrapper">
             <h1 className="title">
-                <img src="/src/assets/adiyatma-logo-with-text.svg"></img>
+                <img src="/assets/adiyatma-logo-with-text.svg"></img>
             </h1>
             <form className="form-signin" onSubmit={login}>
 

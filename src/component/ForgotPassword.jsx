@@ -6,7 +6,7 @@ function ForgotPassword()
     return (
         <div className="ForgotPassword-wrapper">
             <div className="title-logo-wrapper">
-                <img src="/src/assets/adiyatma-logo-with-text.svg"/>
+                <img src="/assets/adiyatma-logo-with-text.svg"/>
             </div>
             <form>
                 <div className="form-title-wrapper">

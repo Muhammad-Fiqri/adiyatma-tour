@@ -4,7 +4,7 @@ function ChangePassword() {
     return(
         <div className="ChangePassword-wrapper">
             <div className="logo-title">
-                <img src="./src/assets/adiyatma-logo-with-text.svg"/>
+                <img src="./assets/adiyatma-logo-with-text.svg"/>
             </div>
             <form>
                 <div className="form-title">
