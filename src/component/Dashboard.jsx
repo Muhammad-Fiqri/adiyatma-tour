@@ -1,9 +1,33 @@
+import { useState } from "react";
 import "../css/Dashboard.scss";
 import BusinessInfo from "./BusinessInfo";
 import SalesGraph from "./SalesGraph";
+import $ from 'jquery';
 
 function Dashboard()
 {
+    const [is_slided,set_slided] = useState(false);
+
+    const burger_icon_clicked = () => {
+        let side_panel = $(".left-panel");
+        let main_panel = $(".main");
+
+        if (!is_slided)
+        {
+            side_panel.animate({width:'0vw'},200);
+            side_panel.hide();
+            main_panel.animate({width:'100vw'},200);
+            main_panel.show();
+            set_slided(true);
+        } else if (is_slided) {
+            side_panel.animate({width:'20vw'},200);
+            side_panel.show();
+            main_panel.animate({width:'80vw'},200);
+            main_panel.show();
+            set_slided(false);
+        }
+    }
+
     return(
         <div className="Dashboard-wrapper">
 
@@ -11,7 +35,7 @@ function Dashboard()
                 <div className="float-left">
                     <img src="./assets/adiyatma-logo-with-text.svg"></img>
                     <div className="burger-icon">
-                        <img src="./assets/burger-icon.svg"></img>
+                        <img onClick={burger_icon_clicked} src="./assets/burger-icon.svg"></img>
                     </div>
                 </div>
                 <div className="float-right">
