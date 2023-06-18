@@ -7,35 +7,29 @@ import UserRole from "./UserRole";
 import TotalSoldMonthly from "./TotalSoldMonthly";
 import TotalSoldDaily from "./TotalSoldDaily";
 import Footer from "./Footer";
+import AddProduct from "./AddProduct";
 
 function Dashboard()
 {
     const [is_slided,set_slided] = useState(false);
     const [current_menu,set_current_menu] = useState("Dashboard");
 
-    const dashboard_clicked = () => {
-        console.log("dashboard_clicked");
-        set_current_menu("Dashboard");
-        console.log(current_menu);
-    }
-
-    const product_clicked = () => {
-        console.log("product_clicked");
-        set_current_menu("Product");
-        console.log(current_menu);
-    }
-
     useEffect(() => {
+        console.log(current_menu);
         switch(current_menu)
         {
             case "Dashboard":
                 $(".dashboard>p").css("color","red");
+                $(".add-product>p").css("color","black");
                 $(".produk>p").css("color","black");
+                $(".main>.title>p").text("Beranda");
                 break;
 
-            case "Product":
+            case "Add Product":
                 $(".dashboard>p").css("color","black");
                 $(".produk>p").css("color","red");
+                $(".add-product>p").css("color","red");
+                $(".main>.title>p").text("Produk/List");
                 break;
         }
     });
@@ -89,29 +83,39 @@ function Dashboard()
                 </div>
                 <div className="dashboard">
                     <img src="./assets/dashboard-icon.svg"></img>
-                    <p onClick={dashboard_clicked}>Dashboard</p>
+                    <p onClick={() => {set_current_menu("Dashboard")}}>Dashboard</p>
                 </div>
                 <div className="produk">
                     <img src="./assets/product-icon.svg"></img>
-                    <p onClick={product_clicked}>Produk</p>
+                    <p onClick={() => {$(".child-of-produk").slideToggle();}}>Produk</p>
                     <img src="./assets/down-arrow-icon.svg"></img>
+                </div>
+                <div className="child-of-produk">
+                    <div className="add-product">
+                        <img src="./assets/tambah-produk-icon.svg"></img>
+                        <p onClick={() => {set_current_menu("Add Product")}}>Tambah Produk</p>
+                    </div>
+                    <div className="list-produk">
+                        <img src="./assets/list-produk-icon.svg"></img>
+                        <p>List Produk</p>
+                    </div>
                 </div>
                 <div className="reservation">
                     <img src="./assets/reservasi-icon.svg"></img>
-                    <p>Reservasi</p>
+                    <p onClick={() => {set_current_menu("Reservasion")}}>Reservasi</p>
                     <img src="./assets/down-arrow-icon.svg"></img>
                 </div>
                 <div className="service-complaints">
                     <img src="./assets/service-complaints-icon.svg"></img>
-                    <p>Keluhan Layanan</p>
+                    <p onClick={() => {set_current_menu("Service Complaints")}}>Keluhan Layanan</p>
                 </div>
                 <div className="report">
                     <img src="./assets/report-icon.svg"></img>
-                    <p>Laporan</p>
+                    <p onClick={() => {set_current_menu("Report")}}>Laporan</p>
                 </div>
                 <div className="account">
                     <img src="./assets/account-icon.svg"></img>
-                    <p>Akun</p>
+                    <p onClick={() => {set_current_menu("Account")}}>Akun</p>
                 </div>
                 <div className="logout">
                     <img src="./assets/logout-icon.svg"></img>
@@ -132,14 +136,14 @@ function Dashboard()
                 </div>
 
                 <div id="content-root">
-                    {current_menu == "Dashboard" && 
+                    {current_menu == "Dashboard" ? 
                     <>
                     <BusinessInfo/>
                     <SalesGraph/>
                     <UserRole/>
                     <TotalSoldMonthly/>
                     <TotalSoldDaily/>
-                    </>
+                    </> : current_menu == "Add Product" ? <AddProduct/> : "Not Found"
                     }
                 </div>
             </div>

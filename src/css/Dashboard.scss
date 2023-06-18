@@ -83,10 +83,11 @@ body {
     .left-panel
     {
         width: 20vw;
-        height: 100vh;
+        height: 200vh;
         background-color: rgb(253, 253, 253);
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         float: left;
 
         .profile
@@ -95,7 +96,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 30%;
+            height: 30vh;
         }
 
         .produk
@@ -106,6 +107,7 @@ body {
             justify-items: left;
             align-items: center;
             grid-template-columns: 15% 70% 15%;
+            cursor: pointer;
         }
 
         .reservation
@@ -116,6 +118,7 @@ body {
             justify-items: left;
             align-items: center;
             grid-template-columns: 15% 70% 15%;
+            cursor: pointer;
         }
 
         & > *:not(.profile,.produk,.reservation)
@@ -126,20 +129,44 @@ body {
             justify-items: left;
             align-items: center;
             grid-template-columns: 15% 85%;
+            cursor: pointer;
+        }
+
+        .child-of-produk
+        {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr;
+            justify-items: flex-start;
+            align-items: center;
+
+            div
+            {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 3fr 7fr;
+                justify-items: center;
+                align-items: center;
+                p {
+                    justify-self: flex-start;
+                    font-weight: 400;
+                    color: rgb(82, 82, 82);
+                }
+            }
         }
     }
 
     .main
     {
         width: 80vw;
-        height: 100%;
+        height: 200vh;
         float: right;
         overflow-y: scroll;
 
         .title
         {
             width: 100%;
-            height: 7%;
+            height: 7vh;
             padding: 1%;
             color: #506B8E;
 

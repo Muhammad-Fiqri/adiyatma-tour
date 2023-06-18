@@ -1,0 +1,58 @@
+.AddProduct-wrapper
+{
+    width: 97%;
+    background-color: white;
+    height: 100vh;
+    margin: 1.5%;
+    padding: 5% 10% 5% 10%;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+
+    h1 
+    {
+        font-size: 100%;
+    }
+
+    form 
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5,1fr);
+        height: 20%;
+
+        label[for="SKL_input"] 
+        {
+            grid-column: 1/2;
+            grid-row: 1/2;
+
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        label[for="kategori_produk"] 
+        {
+            grid-column: 1/2;
+            grid-row: 2/3;
+
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        input {
+            border-radius: 5px;
+            font-size: 100%;
+            padding-left: 10px;
+            transition: 0.1s;
+            outline: none;
+            border: 1px solid black;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid blue;
+        }
+    }
+}
