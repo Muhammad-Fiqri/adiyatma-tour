@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import $ from 'jquery';
 import "../css/Dashboard.scss";
 import BusinessInfo from "./BusinessInfo";
@@ -6,10 +6,40 @@ import SalesGraph from "./SalesGraph";
 import UserRole from "./UserRole";
 import TotalSoldMonthly from "./TotalSoldMonthly";
 import TotalSoldDaily from "./TotalSoldDaily";
+import Footer from "./footer";
 
 function Dashboard()
 {
     const [is_slided,set_slided] = useState(false);
+    const [current_menu,set_current_menu] = useState("Dashboard");
+
+    const dashboard_clicked = () => {
+        console.log("dashboard_clicked");
+        set_current_menu("Dashboard");
+        console.log(current_menu);
+    }
+
+    const product_clicked = () => {
+        console.log("product_clicked");
+        set_current_menu("Product");
+        console.log(current_menu);
+    }
+
+    useEffect(() => {
+        switch(current_menu)
+        {
+            case "Dashboard":
+                $(".dashboard>p").css("color","red");
+                $(".produk>p").css("color","black");
+                break;
+
+            case "Product":
+                $(".dashboard>p").css("color","black");
+                $(".produk>p").css("color","red");
+                break;
+        }
+    });
+
 
     const burger_icon_clicked = () => {
         let side_panel = $(".left-panel");
@@ -59,11 +89,11 @@ function Dashboard()
                 </div>
                 <div className="dashboard">
                     <img src="./assets/dashboard-icon.svg"></img>
-                    <p>Dashboard</p>
+                    <p onClick={dashboard_clicked}>Dashboard</p>
                 </div>
                 <div className="produk">
                     <img src="./assets/product-icon.svg"></img>
-                    <p>Produk</p>
+                    <p onClick={product_clicked}>Produk</p>
                     <img src="./assets/down-arrow-icon.svg"></img>
                 </div>
                 <div className="reservation">
@@ -100,13 +130,22 @@ function Dashboard()
                         <div className="dot"></div>
                     </div>
                 </div>
-                <BusinessInfo/>
-                <SalesGraph/>
-                <UserRole/>
-                <TotalSoldMonthly/>
-                <TotalSoldDaily/>
+
+                <div id="content-root">
+                    {current_menu == "Dashboard" && 
+                    <>
+                    <BusinessInfo/>
+                    <SalesGraph/>
+                    <UserRole/>
+                    <TotalSoldMonthly/>
+                    <TotalSoldDaily/>
+                    </>
+                    }
+                </div>
             </div>
 
+
+            <Footer/>
         </div>
     );
 }
