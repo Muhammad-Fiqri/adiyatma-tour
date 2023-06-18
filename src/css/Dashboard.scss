@@ -12,22 +12,24 @@ body {
         width: 100vw;
         height: 10vh;
         background-color: white;
+        position: sticky;
+        top:0px;
 
         .float-left
         {
             float: left;
             width: 20%;
             height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
+
+            display: grid;
+            grid-template-columns: 8fr 2fr;
+            justify-items: center;
             align-items: center;
 
             img
             {
-                width: 50%;
-                height: 50%;
-                margin-left: 20%;
+                width: 60%;
+                height: 60%;
             }
 
             .burger-icon
@@ -37,9 +39,11 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                img {
-                    width: 20%;
-                    height: 20%;
+
+                img
+                {
+                    width: 30%;
+                    height: 30%;
                 }
             }
         }
@@ -78,7 +82,7 @@ body {
     .left-panel
     {
         width: 20vw;
-        height: 100%;
+        height: 100vh;
         background-color: rgb(253, 253, 253);
         display: flex;
         flex-direction: column;
