@@ -6,7 +6,7 @@ import SalesGraph from "./SalesGraph";
 import UserRole from "./UserRole";
 import TotalSoldMonthly from "./TotalSoldMonthly";
 import TotalSoldDaily from "./TotalSoldDaily";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 function Dashboard()
 {
