@@ -1,8 +1,11 @@
 import { useState } from "react";
+import $ from 'jquery';
 import "../css/Dashboard.scss";
 import BusinessInfo from "./BusinessInfo";
 import SalesGraph from "./SalesGraph";
-import $ from 'jquery';
+import UserRole from "./UserRole";
+import TotalSoldMonthly from "./TotalSoldMonthly";
+import TotalSoldDaily from "./TotalSoldDaily";
 
 function Dashboard()
 {
@@ -17,13 +20,11 @@ function Dashboard()
             side_panel.animate({width:'0vw'},200);
             side_panel.hide();
             main_panel.animate({width:'100vw'},200);
-            main_panel.show();
             set_slided(true);
         } else if (is_slided) {
             side_panel.animate({width:'20vw'},200);
             side_panel.show();
             main_panel.animate({width:'80vw'},200);
-            main_panel.show();
             set_slided(false);
         }
     }
@@ -101,6 +102,9 @@ function Dashboard()
                 </div>
                 <BusinessInfo/>
                 <SalesGraph/>
+                <UserRole/>
+                <TotalSoldMonthly/>
+                <TotalSoldDaily/>
             </div>
 
         </div>

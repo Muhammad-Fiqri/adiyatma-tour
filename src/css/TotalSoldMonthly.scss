@@ -1,0 +1,42 @@
+.TotalSoldMonthly-wrapper
+{
+    position: relative;
+    z-index: 50;
+    width: 97%;
+    height: 70vh;
+    background-color: white;
+    margin: 1.5%;  
+    padding: 1% 5% 1% 5%;
+    border-radius: 10px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 8fr 1fr 1fr;
+    grid-template-rows: 1fr 9fr;
+    grid-column-gap: 2.5%;
+
+    p 
+    {
+        font-weight: 600;
+        font-size: 120%;
+    }
+
+    select
+    {
+        width: 100%;
+        background-color: #E3E6EF;
+        padding: 1%;
+        border: 0;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    .line_chart_wrapper
+    {
+        overflow: hidden;
+        grid-column: 1/4;
+        grid-template-rows: 2/3;
+        height: 100%;
+    }
+}
