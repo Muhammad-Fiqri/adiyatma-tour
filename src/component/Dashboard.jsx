@@ -23,6 +23,7 @@ function Dashboard()
                 $(".add-product>p").css("color","black");
                 $(".produk>p").css("color","black");
                 $(".main>.title>p").text("Beranda");
+                $(".list-produk>p").css("color","black");
                 break;
 
             case "Add Product":
@@ -30,6 +31,15 @@ function Dashboard()
                 $(".produk>p").css("color","red");
                 $(".add-product>p").css("color","red");
                 $(".main>.title>p").text("Produk/List");
+                $(".list-produk>p").css("color","black");
+                break;
+
+            case "List Product":
+                $(".dashboard>p").css("color","black");
+                $(".add-product>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".main>.title>p").text("Produk/List");
+                $(".list-produk>p").css("color","red");
                 break;
         }
     });
@@ -97,7 +107,7 @@ function Dashboard()
                     </div>
                     <div className="list-produk">
                         <img src="./assets/list-produk-icon.svg"></img>
-                        <p>List Produk</p>
+                        <p onClick={() => {set_current_menu("List Product")}}>List Produk</p>
                     </div>
                 </div>
                 <div className="reservation">
@@ -143,7 +153,9 @@ function Dashboard()
                     <UserRole/>
                     <TotalSoldMonthly/>
                     <TotalSoldDaily/>
-                    </> : current_menu == "Add Product" ? <AddProduct/> : "Not Found"
+                    </> : current_menu == "Add Product" ? <AddProduct/> 
+                    : current_menu == "List Product" ? <h1>List Produk</h1> 
+                    : "Not Found"
                     }
                 </div>
             </div>
