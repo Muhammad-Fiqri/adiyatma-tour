@@ -8,6 +8,7 @@ import TotalSoldMonthly from "./TotalSoldMonthly";
 import TotalSoldDaily from "./TotalSoldDaily";
 import Footer from "./Footer";
 import AddProduct from "./AddProduct";
+import ListProduk from "./ListProduk";
 
 function Dashboard()
 {
@@ -30,7 +31,7 @@ function Dashboard()
                 $(".dashboard>p").css("color","black");
                 $(".produk>p").css("color","red");
                 $(".add-product>p").css("color","red");
-                $(".main>.title>p").text("Produk/List");
+                $(".main>.title>p").text("Produk/ List");
                 $(".list-produk>p").css("color","black");
                 break;
 
@@ -38,7 +39,7 @@ function Dashboard()
                 $(".dashboard>p").css("color","black");
                 $(".add-product>p").css("color","black");
                 $(".produk>p").css("color","black");
-                $(".main>.title>p").text("Produk/List");
+                $(".main>.title>p").text("Produk/ List");
                 $(".list-produk>p").css("color","red");
                 break;
         }
@@ -153,8 +154,9 @@ function Dashboard()
                     <UserRole/>
                     <TotalSoldMonthly/>
                     <TotalSoldDaily/>
-                    </> : current_menu == "Add Product" ? <AddProduct/> 
-                    : current_menu == "List Product" ? <h1>List Produk</h1> 
+                    </> 
+                    : current_menu == "Add Product" ? <AddProduct/> 
+                    : current_menu == "List Product" ? <ListProduk/>
                     : "Not Found"
                     }
                 </div>
