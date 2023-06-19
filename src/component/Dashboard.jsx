@@ -9,6 +9,7 @@ import TotalSoldDaily from "./TotalSoldDaily";
 import Footer from "./Footer";
 import AddProduct from "./AddProduct";
 import ListProduk from "./ListProduk";
+import ProfileTab from "./ProfileTab";
 
 function Dashboard()
 {
@@ -78,7 +79,7 @@ function Dashboard()
                     <div className="profile-pic">
                         <img src="./assets/author-nav.png"></img>
                     </div>
-                    <div className="profile-name">
+                    <div className="profile-name" onClick={() => {set_current_menu("Profile")}}>
                         Michael
                     </div>
                 </div>
@@ -157,6 +158,7 @@ function Dashboard()
                     </> 
                     : current_menu == "Add Product" ? <AddProduct/> 
                     : current_menu == "List Product" ? <ListProduk/>
+                    : current_menu == "Profile" ? <ProfileTab/> 
                     : "Not Found"
                     }
                 </div>
