@@ -43,6 +43,14 @@ function Dashboard()
                 $(".main>.title>p").text("Produk/ List");
                 $(".list-produk>p").css("color","red");
                 break;
+
+            case "Profile":
+                $(".dashboard>p").css("color","black");
+                $(".add-product>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".main>.title>p").text("Profil");
+                $(".list-produk>p").css("color","black");
+                break;
         }
     });
 
