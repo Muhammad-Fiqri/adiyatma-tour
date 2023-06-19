@@ -19,11 +19,11 @@ function ProfileTab() {
                 </div>
                 <div className="input-wrapper" id="nama-bank-wrapper">
                     <label htmlFor="">Nama Bank</label>
-                    <input autocomplete="off" type="text" name="" id="" />
+                    <input autoComplete="off" type="text" name="" id="" />
                 </div>
                 <div className="input-wrapper" id="marketing-agent-officer-wrapper">
                     <label htmlFor="">Marketing Agent Officer</label>
-                    <input autocomplete="off" type="text" name="" id="" />
+                    <input autoComplete="off" type="text" name="" id="" />
                 </div>
                 <div className="input-wrapper" id="alamat-lengkap-wrapper">
                     <label htmlFor="">Alamat Lengkap *</label>
