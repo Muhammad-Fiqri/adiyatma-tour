@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import AddProduct from "./AddProduct";
 import ListProduk from "./ListProduk";
 import ProfileTab from "./ProfileTab";
+import AddReservation from "./AddReservation";
 
 function Dashboard()
 {
@@ -24,24 +25,66 @@ function Dashboard()
                 $(".dashboard>p").css("color","red");
                 $(".add-product>p").css("color","black");
                 $(".produk>p").css("color","black");
+                $(".reservation>p").css("color","black");
                 $(".main>.title>p").text("Beranda");
                 $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","black");
+                break;
+            
+            case "Profile":
+                $(".dashboard>p").css("color","black");
+                $(".add-product>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".reservation>p").css("color","black");
+                $(".main>.title>p").text("Profil");
+                $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","black");
                 break;
 
             case "Add Product":
                 $(".dashboard>p").css("color","black");
                 $(".produk>p").css("color","red");
+                $(".reservation>p").css("color","black");
                 $(".add-product>p").css("color","red");
-                $(".main>.title>p").text("Produk/ List");
+                $(".main>.title>p").text("Produk/ Add");
                 $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","black");
                 break;
 
             case "List Product":
                 $(".dashboard>p").css("color","black");
                 $(".add-product>p").css("color","black");
-                $(".produk>p").css("color","black");
+                $(".produk>p").css("color","red");
+                $(".reservation>p").css("color","black");
                 $(".main>.title>p").text("Produk/ List");
                 $(".list-produk>p").css("color","red");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","black");
+                break;
+            
+            case "Add Reservation":
+                $(".dashboard>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".reservation>p").css("color","red");
+                $(".add-product>p").css("color","black");
+                $(".main>.title>p").text("Reservasi/ Add");
+                $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","red");
+                $(".list-reservation>p").css("color","black");
+                break;
+
+            case "List Reservation":
+                $(".dashboard>p").css("color","black");
+                $(".add-product>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".reservation>p").css("color","red");
+                $(".main>.title>p").text("Reservasi/ List");
+                $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","red");
                 break;
         }
     });
@@ -102,21 +145,31 @@ function Dashboard()
                     <p onClick={() => {$(".child-of-produk").slideToggle();}}>Produk</p>
                     <img src="./assets/down-arrow-icon.svg"></img>
                 </div>
-                <div className="child-of-produk">
-                    <div className="add-product">
-                        <img src="./assets/tambah-produk-icon.svg"></img>
-                        <p onClick={() => {set_current_menu("Add Product")}}>Tambah Produk</p>
+                    <div className="child-of-produk">
+                        <div className="add-product">
+                            <img src="./assets/tambah-produk-icon.svg"></img>
+                            <p onClick={() => {set_current_menu("Add Product")}}>Tambah Produk</p>
+                        </div>
+                        <div className="list-produk">
+                            <img src="./assets/list-produk-icon.svg"></img>
+                            <p onClick={() => {set_current_menu("List Product")}}>List Produk</p>
+                        </div>
                     </div>
-                    <div className="list-produk">
-                        <img src="./assets/list-produk-icon.svg"></img>
-                        <p onClick={() => {set_current_menu("List Product")}}>List Produk</p>
-                    </div>
-                </div>
                 <div className="reservation">
                     <img src="./assets/reservasi-icon.svg"></img>
-                    <p onClick={() => {set_current_menu("Reservasion")}}>Reservasi</p>
+                    <p onClick={() => {$(".child-of-reservation").slideToggle();}}>Reservasi</p>
                     <img src="./assets/down-arrow-icon.svg"></img>
                 </div>
+                    <div className="child-of-reservation">
+                        <div className="add-reservation">
+                            <img src="./assets/tambah-produk-icon.svg"></img>
+                            <p onClick={() => {set_current_menu("Add Reservation")}}>Buat Reservasi</p>
+                        </div>
+                        <div className="list-reservation">
+                            <img src="./assets/list-produk-icon.svg"></img>
+                            <p onClick={() => {set_current_menu("List Reservation")}}>List Reservasi</p>
+                        </div>
+                    </div>
                 <div className="service-complaints">
                     <img src="./assets/service-complaints-icon.svg"></img>
                     <p onClick={() => {set_current_menu("Service Complaints")}}>Keluhan Layanan</p>
@@ -159,6 +212,8 @@ function Dashboard()
                     : current_menu == "Add Product" ? <AddProduct/> 
                     : current_menu == "List Product" ? <ListProduk/>
                     : current_menu == "Profile" ? <ProfileTab/> 
+                    : current_menu == "Add Reservation" ? <AddReservation/>
+                    : current_menu == "List Reservation" ? <h1>This is list reservation</h1>
                     : "Not Found"
                     }
                 </div>
