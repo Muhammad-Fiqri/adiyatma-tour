@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@material-ui/icons": "^4.11.3",
     "jquery": "^3.7.0",
     "rc-table": "^7.32.1",
     "react": "^18.2.0",
