@@ -14,6 +14,8 @@ import AddReservation from "./AddReservation";
 import ListReservasi from "./ListReservasi";
 import AddServiceComplaints from "./AddServiceComplaints";
 import ListServiceComplaints from "./ListServiceComplaints";
+import AddAccount from "./AddAccount";
+import ListAccount from "./ListAccount";
 
 function Dashboard()
 {
@@ -38,6 +40,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
             
             case "Profile":
@@ -54,6 +57,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "Add Product":
@@ -70,6 +74,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "List Product":
@@ -86,6 +91,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
             
             case "Add Reservation":
@@ -102,6 +108,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "List Reservation":
@@ -118,6 +125,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "Add Service Complaints":
@@ -134,6 +142,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "List Service Complaints":
@@ -150,6 +159,7 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","red");
                 $(".account").css("color","black");
                 $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","black");
                 break;
 
             case "Add Account":
@@ -157,7 +167,7 @@ function Dashboard()
                 $(".add-product>p").css("color","black");
                 $(".produk>p").css("color","black");
                 $(".reservation>p").css("color","black");
-                $(".main>.title>p").text("Keluhan Layanan/ List");
+                $(".main>.title>p").text("Akun/ List");
                 $(".list-produk>p").css("color","black");
                 $(".add-reservation>p").css("color","black");
                 $(".list-reservation>p").css("color","black");
@@ -166,6 +176,25 @@ function Dashboard()
                 $(".list-service-complaints>p").css("color","black");
                 $(".account").css("color","red");
                 $(".add-account>p").css("color","red");
+                $(".account").css("color","red");
+                $(".list-account>p").css("color","black");
+                break;
+
+            case "List Account":
+                $(".dashboard>p").css("color","black");
+                $(".add-product>p").css("color","black");
+                $(".produk>p").css("color","black");
+                $(".reservation>p").css("color","black");
+                $(".main>.title>p").text("Akun/ List");
+                $(".list-produk>p").css("color","black");
+                $(".add-reservation>p").css("color","black");
+                $(".list-reservation>p").css("color","black");
+                $(".service-complaints>p").css("color","black");
+                $(".add-service-complaints>p").css("color","black");
+                $(".list-service-complaints>p").css("color","black");
+                $(".account").css("color","red");
+                $(".add-account>p").css("color","black");
+                $(".list-account>p").css("color","red");
                 break;
         }
     });
@@ -280,7 +309,7 @@ function Dashboard()
                         </div>
                         <div className="list-account">
                             <img src="./assets/list-produk-icon.svg"></img>
-                            <p onClick={() => {set_current_menu("List Accout")}}>List Akun</p>
+                            <p onClick={() => {set_current_menu("List Account")}}>List Akun</p>
                         </div>
                     </div>
                 <div className="logout">
@@ -317,6 +346,8 @@ function Dashboard()
                     : current_menu == "List Reservation" ? <ListReservasi/>
                     : current_menu == "Add Service Complaints" ? <AddServiceComplaints/>
                     : current_menu == "List Service Complaints" ? <ListServiceComplaints/>
+                    : current_menu == "Add Account" ? <AddAccount/>
+                    : current_menu == "List Account" ? <ListAccount/>
                     : "Not Found"
                     }
                 </div>
