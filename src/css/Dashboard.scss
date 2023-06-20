@@ -225,6 +225,29 @@ body {
                 }
             }
         }
+
+        .child-of-report
+        {
+            display: grid;
+            grid-template-rows: repeat(6,1fr);
+            grid-template-columns: 1fr;
+            justify-items: flex-start;
+            align-items: center;
+
+            div
+            {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 3fr 7fr;
+                justify-items: center;
+                align-items: center;
+                p {
+                    justify-self: flex-start;
+                    font-weight: 400;
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
     }
 
     .main
