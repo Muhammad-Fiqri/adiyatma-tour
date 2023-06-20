@@ -11,6 +11,7 @@ import AddProduct from "./AddProduct";
 import ListProduk from "./ListProduk";
 import ProfileTab from "./ProfileTab";
 import AddReservation from "./AddReservation";
+import ListReservasi from "./ListReservasi";
 
 function Dashboard()
 {
@@ -213,7 +214,7 @@ function Dashboard()
                     : current_menu == "List Product" ? <ListProduk/>
                     : current_menu == "Profile" ? <ProfileTab/> 
                     : current_menu == "Add Reservation" ? <AddReservation/>
-                    : current_menu == "List Reservation" ? <h1>This is list reservation</h1>
+                    : current_menu == "List Reservation" ? <ListReservasi/>
                     : "Not Found"
                     }
                 </div>
