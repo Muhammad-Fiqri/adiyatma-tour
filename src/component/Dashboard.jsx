@@ -14,6 +14,7 @@ import AddReservation from "./AddReservation";
 import ListReservasi from "./ListReservasi";
 import AddServiceComplaints from "./AddServiceComplaints";
 import ListServiceComplaints from "./ListServiceComplaints";
+import AddAccount from "./AddAccount";
 
 function Dashboard()
 {
@@ -317,6 +318,7 @@ function Dashboard()
                     : current_menu == "List Reservation" ? <ListReservasi/>
                     : current_menu == "Add Service Complaints" ? <AddServiceComplaints/>
                     : current_menu == "List Service Complaints" ? <ListServiceComplaints/>
+                    : current_menu == "Add Account" ? <AddAccount/>
                     : "Not Found"
                     }
                 </div>
