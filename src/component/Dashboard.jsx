@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import $ from 'jquery';
 import "../css/Dashboard.scss";
 import BusinessInfo from "./BusinessInfo";
@@ -21,7 +22,12 @@ function Dashboard()
 {
     const [is_slided,set_slided] = useState(false);
     const [current_menu,set_current_menu] = useState("Dashboard");
+    const navigate = useNavigate();
 
+    const logout = () => {
+        console.log("logout");
+        navigate("/");
+    }
     useEffect(() => {
         console.log(current_menu);
         switch(current_menu)
@@ -314,7 +320,7 @@ function Dashboard()
                     </div>
                 <div className="logout">
                     <img src="./assets/logout-icon.svg"></img>
-                    <p>Log Out</p>
+                    <p onClick={logout}>Log Out</p>
                 </div>
             </div>
 
