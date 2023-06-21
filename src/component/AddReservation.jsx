@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import $ from 'jquery';
 import "../css/AddReservation.scss";
 
-function AddReservation() {
+function AddReservation(props) {
     const [current_category,set_current_category] = useState("Tour")
 
     const change_category_type = (e) => {
@@ -80,7 +80,7 @@ function AddReservation() {
                 <div className="pilihan-produk-wrapper">
                     <label htmlFor="pilihan_produk">Pilihan Produk</label>
                     <input required type="text" name="pilihan_produk"></input>
-                    <button id="lihat">Lihat</button>
+                    <button id="lihat" onClick={() => {props.setCurrentMenu("Choose Product")}}>Lihat</button>
                 </div>
                 <div className="jumlah-wrapper">
                     <label htmlFor="jumlah">Jumlah</label>

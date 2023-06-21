@@ -1,7 +1,7 @@
 import "../css/ListAccount.scss";
 import Table from 'rc-table';
 
-function ListAccount() {
+function ListAccount(props) {
     const columns = [
         {
           title: 'No',
@@ -53,7 +53,7 @@ function ListAccount() {
             align: 'center',
             render: () => 
             <div>
-                <img src="./assets/edit row.svg"></img>
+                <img src="./assets/edit row.svg" onClick={() => {props.setCurrentMenu("Add Account")}}></img>
                 <img src="./assets/delete row.svg"></img>
             </div>, 
         },
