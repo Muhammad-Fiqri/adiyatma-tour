@@ -31,10 +31,15 @@ function Dashboard()
     const [current_menu,set_current_menu] = useState("Dashboard");
     const navigate = useNavigate();
 
+    const setMenu = (menu) => {
+        set_current_menu(menu);
+    }
+
     const logout = () => {
         console.log("logout");
         navigate("/");
     }
+
     useEffect(() => {
         console.log(current_menu);
         switch(current_menu)
@@ -447,7 +452,6 @@ function Dashboard()
 
     return(
         <div className="Dashboard-wrapper">
-
             <div className="sticky-top-nav">
                 <div className="float-left">
                     <img src="./assets/adiyatma-logo-with-text.svg"></img>
@@ -459,8 +463,16 @@ function Dashboard()
                     <div className="profile-pic">
                         <img src="./assets/author-nav.png"></img>
                     </div>
-                    <div className="profile-name" onClick={() => {set_current_menu("Profile")}}>
+                    <div className="profile-name" onClick={() => {$(".profile-dropdown").toggle()}}>
                         Michael
+                    </div>
+                    <div className="profile-dropdown">
+                        <div className="dropdown-edit-profil" onClick={() => {set_current_menu("Profile")}}>
+                            <p>Edit Profil</p>
+                        </div>
+                        <div className="dropdown-logout" onClick={logout}>
+                            <p>Log Out</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -490,10 +502,6 @@ function Dashboard()
                         <div className="list-produk">
                             <img src="./assets/list-produk-icon.svg"></img>
                             <p onClick={() => {set_current_menu("List Product")}}>List Produk</p>
-                        </div>
-                        <div className="choose-produk">
-                            <img width={"12px"} src="./assets/pointer-icon.svg"></img>
-                            <p onClick={() => {set_current_menu("Choose Product")}}>Pilih Produk (Beta)</p>
                         </div>
                     </div>
                 <div className="reservation">
@@ -597,15 +605,15 @@ function Dashboard()
                     <TotalSoldDaily/>
                     </> 
                     : current_menu == "Add Product" ? <AddProduct/> 
-                    : current_menu == "List Product" ? <ListProduk/>
+                    : current_menu == "List Product" ? <ListProduk setCurrentMenu={setMenu}/>
                     : current_menu == "Choose Product" ? <ChooseProduct/>
                     : current_menu == "Profile" ? <ProfileTab/> 
-                    : current_menu == "Add Reservation" ? <AddReservation/>
-                    : current_menu == "List Reservation" ? <ListReservasi/>
+                    : current_menu == "Add Reservation" ? <AddReservation setCurrentMenu={setMenu}/>
+                    : current_menu == "List Reservation" ? <ListReservasi setCurrentMenu={setMenu}/>
                     : current_menu == "Add Service Complaints" ? <AddServiceComplaints/>
                     : current_menu == "List Service Complaints" ? <ListServiceComplaints/>
                     : current_menu == "Add Account" ? <AddAccount/>
-                    : current_menu == "List Account" ? <ListAccount/>
+                    : current_menu == "List Account" ? <ListAccount setCurrentMenu={setMenu}/>
                     : current_menu == "Report Account" ? <ReportAccount/>
                     : current_menu == "Report Product" ? <ReportProduk/>
                     : current_menu == "Report Sales Detail" ? <ReportSalesDetail/>

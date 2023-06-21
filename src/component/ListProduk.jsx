@@ -1,7 +1,7 @@
 import "../css/ListProduk.scss";
 import Table from 'rc-table';
 
-function ListProduk() 
+function ListProduk(props) 
 {
     const columns = [
         {
@@ -62,7 +62,7 @@ function ListProduk()
             width: 100,
             align: 'center',
             render: () => <div>
-                    <img src="./assets/edit row.svg"></img>
+                    <img src="./assets/edit row.svg" onClick={() => {props.setCurrentMenu("Add Product")}}></img>
                     <img src="./assets/delete row.svg"></img>
                 </div>, 
         },

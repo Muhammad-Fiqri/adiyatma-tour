@@ -79,6 +79,30 @@ body {
                 font-size: 1vw;
                 cursor: pointer;
             }
+
+            .profile-dropdown
+            {
+                background-color: white;
+                position: absolute;
+                top:70px;
+                right: 20px;
+                box-shadow: 1px 1px 5px black;
+                width: 150px;
+                height: min-content;
+                border-radius: 5px;
+
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                align-items: start;
+                padding: 10px;
+                white-space: nowrap;
+                display: none;
+
+                div:hover {
+                    background-color: rgb(192, 192, 192);
+                    cursor: pointer;
+                }
+            }
         }
     }
 

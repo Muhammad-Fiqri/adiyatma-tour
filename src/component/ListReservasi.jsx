@@ -1,7 +1,7 @@
 import "../css/ListReservasi.scss";
 import Table from 'rc-table';
 
-function ListReservasi() 
+function ListReservasi(props) 
 {
     const columns = [
         {
@@ -75,7 +75,7 @@ function ListReservasi()
             align: 'center',
             render: () => 
             <div className="status-wrapper">
-                <div style={{ backgroundColor:'green', }}>APPROVE</div>
+                <img src="./assets/approve.svg" alt="" />
             </div>
         },
         {
@@ -86,7 +86,8 @@ function ListReservasi()
             align: 'center',
             render: () => 
             <div className="btn-wrapper">
-                <button>A</button><button>B</button>
+                <img src="./assets/blue-pen.svg" alt="" onClick={() => {props.setCurrentMenu("Add Reservation")}}/>
+                <img src="/assets/download-button.svg" alt="" />
             </div>
         },
     ];
